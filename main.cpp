@@ -1,63 +1,109 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main() {
+void addStudentToTheClass();
+
+int main()
+{
     //initialize operation selector, class linked-list, student object, etc.
     int selection;
-    
 
     //welcome message to the user
-        cout << "Welcome to CEN 4072: Software Testing Class Roll System!" << endl;
-    
-    while (true) {
-        
+    cout << "Welcome to CEN 4072: Software Testing Class Roll System!" << endl;
+
+    while (true)
+    {
+
         //ask the user to select the function to run
         cout << "Select the operation you would like to perform" << endl;
-        cout << "1. Add new Student to the Class." << endl << "2. Remove the Student from the class." << endl 
-        << "3. View Student's record (Search for the Student)." << endl << "4. Update Student's record." << endl << "5. Exit application" << endl;
-        
+        cout << "1. Add new Student to the Class." << endl
+             << "2. Remove the Student from the class." << endl
+             << "3. View Student's record (Search for the Student)." << endl
+             << "4. Update Student's record." << endl
+             << "5. Exit application" << endl;
+
         cin >> selection;
 
         //switch statement to run the necessary functions on the student class.
-        switch (selection) {
+        switch (selection)
+        {
 
-            //add the student to the class
-            case 1:
-                
-                break;
+        //add the student to the class
+        case 1:
+            addStudentToTheClass();
+            break;
 
-            //remove the student from the class
-            case 2:
-                
-                break;
+        //remove the student from the class
+        case 2:
 
-            //view the student's record
-            case 3:
-                // search by name
+            break;
 
-                // search by UID
+        //view the student's record
+        case 3:
+            // search by name
 
-                // search by email
-                break;
+            // search by UID
 
-            //update student's information    
-            case 4:
-                // perform search of the student.
+            // search by email
+            break;
 
-                //run update of the field for the student.
-                break;
-            
-            //exit the application
-            case 5:
-                cout << endl << endl << "Thank you for using the CEN4072 Class Roll System! Good bye now! Have a wonderful day!" << endl << endl;
-                return 0;
-                break;
-            default:
-                cout << endl << endl << "Incorrect selection. Please choose a valid selection 1-5." << endl << endl;
-                continue;
-                break;
+        //update student's information
+        case 4:
+            // perform search of the student.
+
+            //run update of the field for the student.
+            break;
+
+        //exit the application
+        case 5:
+            cout << endl
+                 << endl
+                 << "Thank you for using the CEN4072 Class Roll System! Good bye now! Have a wonderful day!" << endl
+                 << endl;
+            return 0;
+            break;
+        default:
+            cout << endl
+                 << endl
+                 << "Incorrect selection. Please choose a valid selection 1-5." << endl
+                 << endl;
+            continue;
+            break;
         }
     }
     return 0;
+}
+
+void addStudentToTheClass()
+{
+    cout << endl
+         << "ADD STUDENT" << endl
+         << endl;
+
+    cout << "Enter Student details" << endl
+         << endl;
+
+    // Get student's name
+    cout << "Name: ";
+    string studentName;
+    cin.ignore();
+    getline(cin, studentName);
+
+    // Get student's ID
+    cout << "USF ID: ";
+    string studentId;
+    cin.ignore();
+    getline(cin, studentId);
+
+    // Get student's Email
+    cout << "Email: ";
+    string studentEmail;
+    cin.ignore();
+    getline(cin, studentEmail);
+
+    cout << endl
+         << "Successfully added student to the class." << endl
+         << endl;
 }
